@@ -2,9 +2,9 @@
 
 ## Background
 
-I wanted to measure air flows and pressure differences in my home's ventilation system. Such pressure differences are small, even 1 Pa (corresponding to a 0.1 mm water column!) matters, and that's not easy to measure. Commercial products are quite expensive. So tein itse ja säästin!
+I wanted to measure air flows and pressure differences in my home's ventilation system. Such pressure differences are small, even 1 Pa (0.1 mm water column!) matters, and that's not easy to measure. Consequently, good enough commercial products are quite expensive. So tein itse ja säästin!
 
-Instead of a fully standalone device like this https://github.com/ardiloot/dif-pressure-meter I wanted some digital detox because I do SW for a living. A **differential pressure probe** can be connected to a multimeter or a data logger. Such modularity is cool, and an analog voltage signal is most ubiquitous and flexible; "portable" in software terms.
+Instead of a fully standalone MCU-controlled device like this https://github.com/ardiloot/dif-pressure-meter I wanted some digital detox because I do SW for a living. A **differential pressure probe** can be connected to a multimeter or a data logger. Such modularity is cool, and an analog voltage signal is most ubiquitous and flexible; "portable" in software terms.
 
 ## Implementation
 
