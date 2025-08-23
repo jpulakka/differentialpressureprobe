@@ -4,7 +4,7 @@
 
 ## Background
 
-I wanted to measure air flows and pressure differences in my home's ventilation system. Such pressure differences are small, even 1 Pa (0.1 mm water column!) matters, and that's not easy to measure. Consequently, commercially available products that are good enough are quite expensive. So tein itse ja säästin!
+I wanted to measure air flows and pressure differences in my home's ventilation system. Such pressure differences are small, even 1 Pa (0.1 mm water column!) matters, and that's not easy to measure. Consequently, commercially available products that are good enough are quite expensive. So *tein itse ja säästin*!
 
 Instead of a fully standalone MCU-controlled device like this absolutely impressive https://github.com/ardiloot/dif-pressure-meter I wanted some digital detox because I do SW for a living. A **differential pressure probe** gives out a voltage proportional to the pressure difference, and can be connected to a multimeter, data logger, or oscilloscope. Apart from being easier to make, modularity is always beneficial, and an analog voltage signal is the most ubiquitous and flexible; "portable" in software terms.
 
@@ -21,17 +21,21 @@ So, while powering the SDP816-125Pa from a few batteries and connecting AOut to 
 * Appropriate voltage scaling, so that, for example, 1 Pa = 10 mV
 * Appropriate bias, so that 0 Pa = 0 V
 
-Here's a simple circuit to do all that. The chosen components are available in tangible TO/DIP packages so that it's easy to build on a stripboard with old-school tools. The SDP816-125Pa pin pitch is less than the standard 2.54 mm, but it fits on regular stripboard by spreading the legs a bit. Attach it properly with M2.5 screws. Protect the sensor ports from dust with tape while building.
+Here's a simple circuit to do all that. The chosen components are available in tangible TO/DIP packages so that it's easy to build on a stripboard with old-school tools. The SDP816-125Pa pin pitch is less than the standard 2.54 mm, but it fits on regular stripboard by spreading the legs a bit. Mount it carefully to the board with M2.5 screws so that the pins don't bear load. Protect the sensor ports from dust with tape while building.
+
+### Power supply
+
+For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. Since the sensor output voltage is ratiometric, dropping voltage in batteries is a potential problem; everything might still work, kind of, but the readings are wrong! To guard for that, the power LED is fed via TL431 (thanks to https://electronics.stackexchange.com/a/174145). The circuit is a bit goofy, operating on the verge of TL431 specs, and it might oscillate. But seems to fulfill its purpose: if the LED is lit, then the battery voltage is sufficient for our regulator to give out a good 3.3 V.
+
+Note that the power has to be floating wrt. the instrument where the output is connected; "minus" is not "ground" in the output!
+
+### Voltage scaling and bias
 
 The 110+150 k voltage divider scales the SDP816-125Pa output so that 1 mV = 0.1 Pa within 0.2 %. A 1 µF capacitor there filters out unnecessary noise above ~3 Hz (but the cap can well be smaller or larger or left out completely).
 
 A multiturn trimmer is used to adjust bias, because zero is what matters; 99 or 101 Pa, who cares, but -0.1 or +0.1 Pa is day and night.
 
 MCP6002-I/P dual op-amp is used as a unity gain buffer. Apart from operating from a single 3.3 V power supply, it is a "minimum surprise" op-amp, meaning 1) unity gain stable, and 2) rail-to-rail input and output = simplicity for design, no need to think too much about the real world :) The 750 R isolation resistors guarantee stability with possible capacitive loads such as long cables, as recommended in the datasheet section 4.3, but they also make the output voltage dependent on load; the assumption is that the receiving instrument input is "high enough impedance" (>1 MOhm) so that the 1.5 k output impedance can be ignored.
-
-For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. Since the sensor output voltage is ratiometric, dropping voltage in batteries is a potential problem; everything might still work, kind of, but the readings are wrong! To guard for that, the power LED is fed via TL431 (thanks to https://electronics.stackexchange.com/a/174145). The circuit is a bit goofy, operating on the verge of TL431 specs, and it might oscillate. But seems to fulfill its purpose: if the LED is lit, then the battery voltage is sufficient for our regulator to give out a good 3.3 V.
-
-Note that the power has to be floating wrt. the instrument where the output is connected; "minus" is not "ground" in the output!
 
 ## Performance
 
