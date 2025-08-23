@@ -21,9 +21,9 @@ So, while powering the SDP816-125Pa from a few batteries and connecting AOut to 
 * Appropriate voltage scaling, so that, for example, 1 Pa = 10 mV
 * Appropriate bias, so that 0 Pa = 0 V
 
-Here's a simple circuit to do all that. The chosen components are available in tangible TO/DIP packages so that it's easy to build on stripboard with old-school tools.
+Here's a simple circuit to do all that. The chosen components are available in tangible TO/DIP packages so that it's easy to build on stripboard with old-school tools. The SDP816-125Pa pin pitch is less than the standard 2.54 mm, but it fits on regular stripboard by spreading the legs a bit. Attach it properly with M2.5 screws. Protect the sensor ports from dust with tape while building.
 
-The 110+150 k voltage divider scales the SDP816-125Pa output so that 1 mV = 0.1 Pa within 0.2 %.
+The 110+150 k voltage divider scales the SDP816-125Pa output so that 1 mV = 0.1 Pa within 0.2 %. A 1 µF capacitor there filters out unnecessary noise above ~3 Hz (but the cap can well be smaller or larger or left out completely).
 
 A multiturn trimmer is used to adjust bias, because zero is what matters; 99 or 101 Pa, who cares, but -0.1 or +0.1 Pa is day and night.
 
