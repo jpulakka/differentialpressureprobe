@@ -4,13 +4,13 @@
 
 ## Background
 
-I wanted to measure air flows and pressure differences in my home's ventilation system. Such pressure differences are small, even 1 Pa (0.1 mm water column!) matters, and that's not easy to measure. Consequently, good enough commercial products are quite expensive. So tein itse ja säästin!
+I wanted to measure air flows and pressure differences in my home's ventilation system. Such pressure differences are small, even 1 Pa (0.1 mm water column!) matters, and that's not easy to measure. Consequently, commercially available products that are good enough are quite expensive. So tein itse ja säästin!
 
-Instead of a fully standalone MCU-controlled device like this https://github.com/ardiloot/dif-pressure-meter I wanted some digital detox because I do SW for a living. A **differential pressure probe** can be connected to a multimeter or a data logger. Such modularity is cool, and an analog voltage signal is most ubiquitous and flexible; "portable" in software terms.
+Instead of a fully standalone MCU-controlled device like this https://github.com/ardiloot/dif-pressure-meter I wanted some digital detox because I do SW for a living. A **differential pressure probe** can be connected to a multimeter. Or data logger. Or oscilloscope. Such modularity is beneficial, and an analog voltage signal is the most ubiquitous and flexible; it is also "portable" in software terms.
 
 ## Implementation
 
-All this is just some supporting circuitry around the fabulous Sensirion SDP series sensor. Pressure difference is detected via temperature measurement of a continuous gas stream through the sensor. In other words, **gas flows through the sensor**. Appropriate for many applications, but not all.
+All this is just some supporting circuitry around the fabulous Sensirion SDP series sensor. Pressure difference is detected via temperature measurement of a continuous gas stream through the sensor. Yes, **gas flows through the sensor**. Appropriate for many applications, but not all.
 
 From the SDP816-125Pa datasheet, we immediately see two things:
 1. Sensitivity (V/Pa) depends on Vdd, known as "ratiometric" analog output.
@@ -21,7 +21,7 @@ So, while powering the SDP816-125Pa from a few batteries and connecting AOut to 
 * Appropriate voltage scaling, so that, for example, 1 Pa = 10 mV
 * Appropriate bias, so that 0 Pa = 0 V
 
-Here's a simple circuit to do all that. The chosen components are available in tangible TO/DIP packages. 
+Here's a simple circuit to do all that. The chosen components are available in tangible TO/DIP packages so that it's easy to build on stripboard with old-school tools.
 
 The 110+150 k voltage divider scales the SDP816-125Pa output so that 1 mV = 0.1 Pa within 0.2 %.
 
