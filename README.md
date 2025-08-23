@@ -41,6 +41,6 @@ MCP6002-I/P dual op-amp is used as a unity gain buffer. Apart from operating fro
 
 Connected to a decent multimeter that can measure millivolts, and bias carefully zeroed, this setup should give better than 0.1 Pa (1 mV) accuracy in the low end and 3 % span accuracy, if we trust Sensirion's specs and haven't made some coarse mistake. This outperforms most commercially available devices, such as >1000 € Fluke 922 with 1 Pascal "resolution".
 
-Note that the expected output range is asymmetric, -125 mV (-12.5 Pa) ... +1250 mV (+125 Pa). The negative side is there mainly to differentiate zero from negative; usually, you assume the direction of the pressure gradient in advance and connect the sensor accordingly.
+Note that the measurement range is asymmetric, expected output is -125 mV (-12.5 Pa) ... +1250 mV (+125 Pa). The negative side is there mainly to differentiate zero from negative; usually, you assume the direction of the pressure gradient in advance and connect the sensor accordingly.
 
 Experimentally, it seems to work for measuring not only the pressure difference (--> volumetric flow rate) across air vents (a couple of Pa to a few dozen Pa) and across the building envelope (~1 Pa), but even air flow across rooms, under door gaps (0.1 to 0.3 Pa in my home) can be clearly measured. |Voltage| stays the same and only the sign changes when swapping the tube from "high" to "low" (as long as |pressure| < 12.5 Pa). Numbers seem to make sense. I trust it!
