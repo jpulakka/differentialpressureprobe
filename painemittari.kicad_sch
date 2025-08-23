@@ -1953,7 +1953,7 @@
 		)
 		(uuid "7e2a48f0-47f1-4a0d-a539-4c237eabbd6b")
 	)
-	(text "~380 mV"
+	(text "~381 mV"
 		(exclude_from_sim no)
 		(at 136.906 88.138 0)
 		(effects
