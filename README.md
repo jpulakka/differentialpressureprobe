@@ -35,7 +35,7 @@ Note that the power has to be floating wrt. the instrument where the output is c
 
 ## Performance
 
-Connected to a decent multimeter that can measure millivolts, and bias zeroed, this setup should give better than 0.1 Pa (1 mV) accuracy in the low end and 3 % span accuracy, if we trust Sensirion's specs and haven't made some coarse mistake. This outperforms most commercially available devices, such as ~1000 € Fluke 922 with 1 Pascal "resolution"
+Connected to a decent multimeter that can measure millivolts, and bias zeroed, this setup should give better than 0.1 Pa (1 mV) accuracy in the low end and 3 % span accuracy, if we trust Sensirion's specs and haven't made some coarse mistake. This outperforms most commercially available devices, such as >1000 € Fluke 922 with 1 Pascal "resolution"
 
 Experimentally, it seems to work for measuring not only the pressure difference (--> volumetric flow rate) across air vents (a couple of Pa to a few dozen Pa) and across the building envelope (~1 Pa), but even air flow across rooms, under door gaps (0.1 to 0.3 Pa in my home) can be clearly measured. |Voltage| stays the same and only the sign changes when swapping the tube from "high" to "low" (as long as |pressure| < 12.5 Pa). Numbers seem to make sense. I trust it!
 
