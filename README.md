@@ -1,6 +1,8 @@
 # Differential pressure probe
 
-[<img width="132" height="42" alt="Created-By-a-Human-Not-By-AI-Badge-white@2x" src="https://github.com/user-attachments/assets/6ad8fabe-5bea-4693-8d09-81c21de009a7" />](https://notbyai.fyi/)
+[<img width="132" height="42" alt="Created-By-a-Human-Not-By-AI-Badge-white@2x" src="Created-By-a-Human-Not-By-AI-Badge-white%402x.png" />](https://notbyai.fyi/)
+
+https://github.com/jpulakka/differentialpressureprobe/blob/master/Created-By-a-Human-Not-By-AI-Badge-white%402x.png
 
 ## Background
 
