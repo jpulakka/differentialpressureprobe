@@ -226,7 +226,24 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "global_label_dangling|1778000|495300|b0edfd35-d99e-47c1-a474-6b618d52e91a|00000000-0000-0000-0000-000000000000|/6ec43a41-e688-4ba8-8538-b6f721d6c1f2||",
+        ""
+      ],
+      [
+        "global_label_dangling|1778000|889000|c5349d5e-103a-4ff2-955c-8057c44a4884|00000000-0000-0000-0000-000000000000|/6ec43a41-e688-4ba8-8538-b6f721d6c1f2||",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1193800|1219200|fd5fe22d-2e2c-41d3-be84-eb91daa4bb35|00000000-0000-0000-0000-000000000000|/6ec43a41-e688-4ba8-8538-b6f721d6c1f2|/6ec43a41-e688-4ba8-8538-b6f721d6c1f2|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1270000|622300|cbeb340a-9bfd-4692-b738-f48ffe82035f|00000000-0000-0000-0000-000000000000|/6ec43a41-e688-4ba8-8538-b6f721d6c1f2|/6ec43a41-e688-4ba8-8538-b6f721d6c1f2|",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -596,6 +613,14 @@
       "version": 1
     },
     "net_format_name": "",
+    "ngspice": {
+      "fix_include_paths": true,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 4,
+      "workbook_filename": ""
+    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "space_save_all_events": true,

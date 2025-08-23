@@ -1,3 +1,5 @@
-painemittari-backups*
+*backups*
 ~*
 *.bak
+*auto_saved*
+*autosave*
