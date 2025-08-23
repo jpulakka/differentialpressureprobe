@@ -2,8 +2,6 @@
 
 [<img width="132" height="42" alt="Created-By-a-Human-Not-By-AI-Badge-white@2x" src="Created-By-a-Human-Not-By-AI-Badge-white%402x.png" />](https://notbyai.fyi/)
 
-https://github.com/jpulakka/differentialpressureprobe/blob/master/Created-By-a-Human-Not-By-AI-Badge-white%402x.png
-
 ## Background
 
 I wanted to measure air flows and pressure differences in my home's ventilation system. Such pressure differences are small, even 1 Pa (0.1 mm water column!) matters, and that's not easy to measure. Consequently, good enough commercial products are quite expensive. So tein itse ja säästin!
