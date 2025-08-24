@@ -8,7 +8,7 @@ Instead of a fully standalone MCU-controlled device like this absolutely impress
 
 ## Implementation
 
-All this is just some supporting circuitry around the fabulous Sensirion SDP series sensor, which detects pressure difference via temperature measurement of a continuous gas stream through the sensor. Yes, **gas flows through the sensor**. Appropriate for many applications, but not all.
+All this is just some supporting circuitry around the fabulous Sensirion SDP series sensor, which detects pressure difference via temperature measurement of a continuous gas stream through the sensor. Yes, **air flows through the sensor**. Appropriate for many applications, but not all.
 
 From the SDP816-125Pa datasheet, we immediately see two things:
 1. Sensitivity (V/Pa) depends on Vdd, known as "ratiometric" analog output.
