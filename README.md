@@ -33,7 +33,7 @@ The 110+150 k voltage divider scales the SDP816-125Pa output so that 1 mV = 0.1 
 
 Bias is adjustable, because an accurate zero is what matters; 99 or 101 Pa, who cares, but -0.1 or +0.1 Pa is day and night. A good-quality multiturn trimmer is a must; I used a Bourns PV36X104C01B00 25-turn model. For easier (less sensitive) trimming, use 100 k fixed resistor to 3.3 V and 20 k trimmer to GND.
 
-MCP6002-I/P dual op-amp is used as a unity gain buffer. Apart from operating from a single 3.3 V power supply, it is a "minimum surprise" op-amp, meaning 1) unity gain stable, and 2) rail-to-rail input and output = simplicity for design, no need to think too much about the real world :) The 750 R isolation resistors guarantee stability with possible capacitive loads such as long cables, as recommended in the datasheet section 4.3, but they also make the output voltage dependent on load; the assumption is that the receiving instrument input is "high enough impedance" (>1 MOhm) so that the 1.5 k output impedance can be ignored.
+MCP6002-I/P dual op-amp is used as a unity gain buffer. Apart from operating from a single 3.3 V power supply, it is unity-gain stable and rail-to-rail input and output = minimum surprise. The 750 R isolation resistors guarantee stability with possible capacitive loads such as long cables, as recommended in the datasheet section 4.3, but they also make the output voltage dependent on load; the assumption is that the receiving instrument input is "high enough impedance" (>1 MOhm) so that the 1.5 k output impedance can be ignored.
 
 ## Performance
 
