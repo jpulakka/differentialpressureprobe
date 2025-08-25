@@ -23,7 +23,7 @@ Here's a simple circuit to do all that. The chosen components are available in t
 
 ### Power supply
 
-For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. Since the sensor output voltage is ratiometric, dying batteris is an insidious problem; everything might still appear to work, but the readings are wrong! To guard against that, the power LED is fed via the wonderful TL431 "programmable shunt regulator" / "bandgap voltage reference" chip (thanks https://electronics.stackexchange.com/a/174145). The circuit is a bit hacky, operating on the verge of TL431 specs, and it might oscillate. But it's simple, and it seems to fulfill its purpose: if the LED is lit, then the battery voltage is sufficient for our regulator to give out a good 3.3 V.
+For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. Since the sensor output voltage is ratiometric, dying batteries pose an insidious problem; everything might still appear to work, but the readings are wrong! To guard against that, the power LED is fed via the wonderful TL431 "programmable shunt regulator" / "bandgap voltage reference" chip (thanks https://electronics.stackexchange.com/a/174145). The circuit is a bit hacky, operating on the verge of TL431 specs, and it might oscillate. But it's simple, and it seems to fulfill its purpose: if the LED is lit, then the battery voltage is sufficient for our regulator to give out a good 3.3 V.
 
 Note that the power has to be floating wrt. the instrument where the output is connected; "minus" is not "ground" in the output!
 
@@ -31,7 +31,7 @@ Note that the power has to be floating wrt. the instrument where the output is c
 
 The 110+150 k voltage divider scales the SDP816-125Pa output so that 1 mV = 0.1 Pa within 0.2 %. A 1 µF capacitor there filters out unnecessary noise above ~3 Hz (but the cap can well be smaller or larger or left out completely).
 
-Bias is adjustable, because an accurate zero is what matters; 99 or 101 Pa, who cares, but -0.1 or +0.1 Pa is day and night. A good-quality multiturn trimmer is a must; I used a Bourns PV36X104C01B00 25-turn model. For easier (less sensitive) trimming, use 100 k fixed resistor to 3.3 V and 20 k trimmer to GND.
+Bias is adjustable, because an accurate zero is what matters; 99 or 101 Pa, who cares, but -0.1 or +0.1 Pa is day and night. A good-quality multiturn trimmer is a must; I used a Bourns PV36X104C01B00 25-turn model. For easier (less sensitive) trimming, use a 100 k fixed resistor to 3.3 V and a 20 k trimmer to GND.
 
 MCP6002-I/P dual op-amp is used as a unity gain buffer. Apart from operating from a single 3.3 V power supply, it is unity-gain stable and rail-to-rail input and output = minimum surprise. The 750 R isolation resistors guarantee stability with possible capacitive loads such as long cables, as recommended in the datasheet section 4.3, but they also make the output voltage dependent on load; the assumption is that the receiving instrument input is "high enough impedance" (>1 MOhm) so that the 1.5 k output impedance can be ignored.
 
