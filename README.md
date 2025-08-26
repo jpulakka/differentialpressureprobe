@@ -19,11 +19,11 @@ So, while powering the SDP816-125Pa from a few batteries and connecting AOut to 
 * Appropriate voltage scaling, so that, for example, 1 Pa = 10 mV
 * Appropriate bias, so that 0 Pa = 0 V
 
-Here's a simple circuit to do all that. The chosen components are available in tangible TO/DIP packages so that it's easy to build on a stripboard with old-school tools. The SDP816-125Pa pin pitch is less than the standard 2.54 mm, but it fits on regular stripboard by spreading the legs a bit. Protect the sensor ports from crap with tape while building. Before soldering, mount the sensor carefully to the board with M2.5 screws so that the pins don't bear any load.
+Here's a simple circuit to do all that. The chosen components are available in tangible TO/DIP packages so that it's easy to build on a stripboard with old-school tools. The SDP816-125Pa pin pitch is less than the standard 2.54 mm, but it fits on regular stripboard by bending the pins a bit. Protect the sensor ports from crap with tape while building. Before soldering, mount the sensor carefully to the board with M2.5 screws so that the pins don't bear any load.
 
 ### Power supply
 
-For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. Since the sensor output voltage is ratiometric, dying batteries pose an insidious problem; everything might still appear to work, but the readings are wrong! To guard against that, the power LED is fed via the wonderful TL431 "programmable shunt regulator" / "bandgap voltage reference" chip (thanks https://electronics.stackexchange.com/a/174145). The circuit is a bit hacky, operating on the verge of TL431 specs, and it might oscillate. But it's simple, and it seems to fulfill its purpose: if the LED is lit, then the battery voltage is sufficient for our regulator to give out a good 3.3 V.
+For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. Since the sensor output voltage is ratiometric, dying batteries pose an insidious problem; everything might still appear to work, but the readings are wrong! To guard against that, the power LED is fed via the wonderful TL431CZ "programmable shunt regulator" / "bandgap voltage reference" chip (thanks https://electronics.stackexchange.com/a/174145). The circuit is a bit hacky, operating on the verge of TL431 specs, and it might oscillate. But it's simple, and it seems to fulfill its purpose: if the LED is lit, then the battery voltage is sufficient for our regulator to give out a good 3.3 V.
 
 Note that the power has to be floating wrt. the instrument where the output is connected; "minus" is not "ground" in the output!
 
