@@ -23,7 +23,7 @@ Here's a simple circuit to do all that. The chosen components are available in t
 
 ### Power supply
 
-For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. Since the sensor output voltage is ratiometric, dying batteries pose an insidious problem; everything might still appear to work, but the readings are wrong! To guard against that, the power LED is fed via the wonderful TL431CZ "programmable shunt regulator" / "bandgap voltage reference" chip (thanks https://electronics.stackexchange.com/a/174145). The circuit is a bit hacky, operating on the verge of TL431 specs, and it might oscillate. But it's simple, and it seems to fulfill its purpose: if the LED is lit, then the battery voltage is sufficient for our regulator to give out a good 3.3 V.
+For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. Since the sensor output voltage is ratiometric, dying batteries pose an insidious problem; everything might still appear to work, but the readings are wrong! To guard against that, the power LED is fed via the wonderful TL431CZ "programmable shunt regulator" chip (thanks https://electronics.stackexchange.com/a/174145). The circuit is a bit hacky, operating on the verge of TL431 specs, and it might oscillate. But it's simple, and it seems to fulfill its purpose: if the LED is lit, then the battery voltage is sufficient for our regulator to give out a good 3.3 V.
 
 The power has to be floating wrt. the instrument where the output is connected; "minus" is not "ground" in the output!
 
