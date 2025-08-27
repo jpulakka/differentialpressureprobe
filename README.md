@@ -25,7 +25,7 @@ Here's a simple circuit to do all that. The chosen components are available in t
 
 For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. Since the sensor output voltage is ratiometric, dying batteries pose an insidious problem; everything might still appear to work, but the readings are wrong! To guard against that, the power LED is fed via the wonderful TL431CZ "programmable shunt regulator" / "bandgap voltage reference" chip (thanks https://electronics.stackexchange.com/a/174145). The circuit is a bit hacky, operating on the verge of TL431 specs, and it might oscillate. But it's simple, and it seems to fulfill its purpose: if the LED is lit, then the battery voltage is sufficient for our regulator to give out a good 3.3 V.
 
-Note that the power has to be floating wrt. the instrument where the output is connected; "minus" is not "ground" in the output!
+The power has to be floating wrt. the instrument where the output is connected; "minus" is not "ground" in the output!
 
 ### Voltage scaling and bias
 
@@ -39,6 +39,6 @@ MCP6002-I/P dual op-amp is used as a unity gain buffer. Apart from operating fro
 
 Connected to a decent multimeter that can measure millivolts, and bias carefully zeroed, this setup should give better than 0.1 Pa (1 mV) accuracy in the low end and 3 % span accuracy, if we trust Sensirion's specs and haven't made some coarse mistake. This outperforms most commercially available devices, such as >1000 € Fluke 922 with 1 Pascal "resolution".
 
-Note that the measurement range is asymmetric, expected output is -125 mV (-12.5 Pa) ... +1250 mV (+125 Pa). The negative side is there mainly to differentiate zero from negative; usually, you assume the direction of the pressure gradient in advance and connect the sensor accordingly.
+The measurement range is asymmetric, expected output is -125 mV (-12.5 Pa) ... +1250 mV (+125 Pa). The negative side is there mainly to differentiate zero from negative; usually, you assume the direction of the pressure gradient in advance and connect the sensor accordingly.
 
 Experimentally, it seems to work for measuring not only the pressure difference (--> volumetric flow rate) across air vents (a couple of Pa to a few dozen Pa) and across the building envelope (~1 Pa), but even air flow across rooms, under door gaps (0.1 to 0.3 Pa in my home) can be clearly detected. |Voltage| stays the same and only its sign changes when swapping the tube from "high" to "low" (as long as |pressure| < 12.5 Pa). Numbers seem to make sense. I trust it!
