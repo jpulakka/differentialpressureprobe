@@ -8,13 +8,13 @@ Instead of a fully standalone MCU-controlled device like this absolutely impress
 
 ## Implementation
 
-All this is just some supporting circuitry around the fabulous Sensirion SDP series sensor, which detects pressure difference via temperature measurement of a continuous gas stream through the sensor. Yes, **air flows through the sensor**. Appropriate for many applications, but not all.
+All this is just some supporting circuitry around the fabulous Sensirion SDP series sensor, which detects pressure difference via temperature measurement of a gas stream through the sensor. Yes, **air flows through the sensor**. Appropriate for many applications, but not all.
 
 From the SDP816-125Pa datasheet, we immediately see two things:
 1. Sensitivity (V/Pa) depends on Vdd, known as "ratiometric" analog output.
 2. Zero Pascal is not zero Volt – it can't be, because the power supply is single-sided, and we need to be able to measure negative pressures too to differentiate zero from negative, even if we knew the direction of pressure difference in advance.
 
-So, while powering the SDP816-125Pa from a few batteries and connecting AOut to a multimeter would work, the readings wouldn't be directly useful. For nice readings, we need:
+So, while simply powering the SDP816-125Pa from a battery and connecting AOut to a multimeter would work, the readings wouldn't be directly useful. For nice readings, we need:
 * Stable PSU
 * Appropriate voltage scaling, so that, for example, 1 Pa = 10 mV
 * Appropriate bias, so that 0 Pa = 0 V
