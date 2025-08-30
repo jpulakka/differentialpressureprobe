@@ -12,7 +12,8 @@ All this is just some supporting circuitry around the fabulous Sensirion SDP ser
 
 ![sensirion](img/sensirion.jpg)
 
-From the SDP816-125Pa datasheet, we immediately see two things:
+
+The SDP816-125Pa datasheet provides equation `dP=(190*AOut)/Vdd-38`. Rearranged to `AOut=Vdd*(dP+38)/190`, two things become apparent:
 1. Sensitivity (V/Pa) depends on Vdd, known as "ratiometric" analog output.
 2. Zero Pascal is not zero Volt – it can't be, because the power supply is single-sided, and we need to be able to measure negative pressures too to differentiate zero from negative, even if we knew the direction of pressure difference in advance.
 
