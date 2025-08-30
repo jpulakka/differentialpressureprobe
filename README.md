@@ -1,6 +1,6 @@
 # Differential pressure probe
 
-[<img width="132" height="42" alt="Created-By-a-Human-Not-By-AI-Badge-white@2x" src="Created-By-a-Human-Not-By-AI-Badge-white%402x.png" />](https://notbyai.fyi/)
+[<img width="132" height="42" alt="Created-By-a-Human-Not-By-AI-Badge-white@2x" src="img/Created-By-a-Human-Not-By-AI-Badge-white%402x.png" />](https://notbyai.fyi/)
 
 I wanted to measure air flows and pressure differences in my home's ventilation system. Such pressure differences are small, even 1 Pa (0.1 mm water column!) matters, and that's not easy to measure. Consequently, commercially available products that are good enough are quite expensive. So *tein itse ja säästin*!
 
