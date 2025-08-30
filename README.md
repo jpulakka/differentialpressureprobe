@@ -22,17 +22,17 @@ So, while simply powering the SDP816-125Pa from a battery and connecting AOut to
 * Appropriate voltage scaling, so that, for example, 1 Pa = 10 mV
 * Appropriate bias, so that 0 Pa = 0 V
 
-![wiring](img/johdotus.jpg)![box](img/laatikko.jpg)
-
 Here's a simple circuit to do all that. The chosen components are available in tangible TO/DIP packages so that it's easy to build on a stripboard with old-school tools. The SDP816-125Pa pin pitch is less than the standard 2.54 mm, but it fits on regular stripboard by bending the pins a bit. Protect the sensor ports from crap with tape while building. Before soldering, mount the sensor carefully to the board with M2.5 screws so that the pins don't bear any load.
+
+![wiring](img/johdotus.jpg) ![box](img/laatikko.jpg)
+
+The schematic is here: [differentialpressureprobe.pdf](differentialpressureprobe.pdf). The striboard you'll need to figure out on your own :)
 
 ### Power supply
 
 For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. Since the sensor output voltage is ratiometric, dying batteries pose an insidious problem; everything might still appear to work, but the readings are wrong! To guard against that, the power LED is fed via the wonderful TL431CZ "programmable shunt regulator" chip (thanks https://electronics.stackexchange.com/a/174145). The circuit is a bit hacky, operating on the verge of TL431 specs, and it might oscillate. But it's simple, and it seems to fulfill its purpose: if the LED is lit, then the battery voltage is sufficient for our regulator to give out a good 3.3 V.
 
 ![power supply](img/psu.png)
-
-The power has to be floating wrt. the instrument where the output is connected; "minus" is not "ground" in the output!
 
 ### Voltage scaling and bias
 
@@ -54,4 +54,4 @@ The measurement range is asymmetric, expected output is -125 mV (-12.5 Pa) ... +
 
 ![fluke](img/parempi-kuin-fluke.jpg)
 
-Experimentally, it seems to work for measuring not only the pressure difference (--> volumetric flow rate) across air vents (a couple of Pa to a few dozen Pa) and across the building envelope (~1 Pa), but even air flow across rooms, under door gaps (0.1 to 0.3 Pa in my home) can be clearly detected. |Voltage| stays the same and only its sign changes when swapping the tube from "high" to "low" (as long as |pressure| < 12.5 Pa). Numbers seem to make sense. I trust it!
+Experimentally, it seems to work for measuring not only the pressure difference (and so, volumetric flow rate) across air vents (a couple of Pa to a few dozen Pa) and across the building envelope (~1 Pa), but even air flow across rooms, under door gaps (0.1 to 0.3 Pa in my home) can be clearly detected. |Voltage| stays the same and only its sign changes when swapping the tube from "high" to "low" (as long as |pressure| < 12.5 Pa). Numbers seem to make sense. I trust it!
