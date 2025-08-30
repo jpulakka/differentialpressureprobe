@@ -31,8 +31,6 @@ For power, 3xAAA batteries + MCP1700-3302E/TO for voltage regulation are good. S
 
 ![power supply](img/psu.png)
 
-The power has to be floating wrt. the instrument where the output is connected; "minus" is not "ground" in the output!
-
 ### Voltage scaling and bias
 
 The 110+150 k voltage divider scales the SDP816-125Pa output so that 1 mV = 0.1 Pa within 0.2 %. A 1 µF capacitor there filters out unnecessary noise above ~3 Hz (but the cap can well be smaller or larger or left out completely).
