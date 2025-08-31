@@ -54,4 +54,4 @@ The measurement range is asymmetric, expected output is -125 mV (-12.5 Pa) ... +
 
 ![fluke](img/parempi-kuin-fluke.jpg)
 
-Experimentally, it seems to work for measuring not only the pressure difference (and so, volumetric flow rate) across air vents (a couple of Pa to a few dozen Pa) and across the building envelope (~1 Pa), but even air flow across rooms, under door gaps (0.1 to 0.3 Pa in my home) can be clearly detected. |Voltage| stays the same and only its sign changes when swapping the tube from "high" to "low" (as long as |pressure| < 12.5 Pa). Numbers seem to make sense. I trust it!
+Experimentally, it seems to work for measuring not only the pressure difference (and so, volumetric flow rate) across air vents (a couple of Pa to a few dozen Pa) and across the building envelope (~0 to 2 Pa), but even air flow across rooms, under door gaps (0.1 to 0.3 Pa in my home) can be clearly detected. |Voltage| stays the same and only its sign changes when swapping the tube from "high" to "low" (as long as |pressure| < 12.5 Pa). Numbers seem to make sense. I trust it!
