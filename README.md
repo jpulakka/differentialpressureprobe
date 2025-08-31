@@ -26,7 +26,7 @@ Here's a simple circuit to do all that. The chosen components are available in t
 
 ![wiring](img/johdotus.jpg) ![box](img/laatikko.jpg)
 
-The schematic is here: [differentialpressureprobe.pdf](differentialpressureprobe.pdf). The striboard you'll need to figure out on your own :)
+Full schematic is here: [differentialpressureprobe.pdf](differentialpressureprobe.pdf). The striboard you'll need to figure out on your own :)
 
 ### Power supply
 
