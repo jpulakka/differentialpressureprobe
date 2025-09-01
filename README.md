@@ -41,9 +41,7 @@ Parts list is here:
   U4 SDP816-125Pa
   D1 green LED
   CB1 power switch
-  3xAAA battery holder
-  Stripboard
-  M2.5 screws, enclosure, wires, connectors (banana socket)
+  3xAAA battery holder, stripboard, M2.5 screws, enclosure, wires, connectors (banana socket)
 ```
 
 The striboard layout you'll need to figure out on your own :)
