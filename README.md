@@ -33,7 +33,7 @@ Parts list is here:
   R3, R6, R7 750 R
   R4 110 k
   R5 150 k
-  RV1 100 k (multiturn)
+  RV1 100 k multiturn (>20)
   C1, C2, C3 1 µF ceramic (X7R)
   U1 TL431CZ
   U2 MCP1700-3302E/TO
