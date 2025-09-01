@@ -42,8 +42,8 @@ Parts list is here:
   D1 green LED
   CB1 power switch
   3xAAA battery holder
-  Stribroard
-  Enclosure, wires, M2.5 screws
+  Stripboard
+  M2.5 screws, enclosure, wires, connectors (banana socket)
 ```
 
 The striboard layout you'll need to figure out on your own :)
