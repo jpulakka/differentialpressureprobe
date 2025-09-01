@@ -22,11 +22,31 @@ So, while simply powering the SDP816-125Pa from a battery and connecting AOut to
 * Appropriate voltage scaling, so that, for example, 1 Pa = 10 mV
 * Appropriate bias, so that 0 Pa = 0 V
 
-Here's a simple circuit to do all that. The chosen components are available in tangible TO/DIP packages so that it's easy to build on a stripboard with old-school tools. The SDP816-125Pa pin pitch is less than the standard 2.54 mm, but it fits on regular stripboard by bending the pins a bit. Protect the sensor ports from crap with tape while building. Before soldering, mount the sensor carefully to the board with M2.5 screws so that the pins don't bear any load.
+Here's a simple circuit to do all that: [differentialpressureprobe.pdf](differentialpressureprobe.pdf) The chosen components are available in tangible TO/DIP packages so that it's easy to build on a stripboard with old-school tools. The SDP816-125Pa pin pitch is less than the standard 2.54 mm, but it fits on regular stripboard by bending the pins a bit. Protect the sensor ports from crap with tape while building. Before soldering, mount the sensor carefully to the board with M2.5 screws so that the pins don't bear any load.
 
 ![wiring](img/johdotus.jpg) ![box](img/laatikko.jpg)
 
-Full schematic is here: [differentialpressureprobe.pdf](differentialpressureprobe.pdf). The striboard you'll need to figure out on your own :)
+Parts list is here:
+```
+  R1 10 k
+  R2 4.7 k
+  R3, R6, R7 750 R
+  R4 110 k
+  R5 150 k
+  RV1 100k (multiturn)
+  C1, C2, C3 1 µF ceramic (X7R)
+  U1 TL431CZ
+  U2 MCP1700-3302E/TO
+  U3 MCP6002-I/P
+  U4 SDP816-125Pa
+  D1 green LED
+  CB1 power switch
+  3xAAA battery holder
+  Stribroard
+  Enclosure, wires, M2.5 screws
+```
+
+The striboard layout you'll need to figure out on your own :)
 
 ### Power supply
 
